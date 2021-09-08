@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "name": "RNA",
+      "group": "extractions",
+      "schedule": {
+        "Sunday": [8, 12, 18],
+        "Monday": [8, 18],
+        "Tuesday": [8, 18],
+        "Wednesday": [8, 12, 18],
+        "Thursday": [8, 12, 18],
+        "Friday": [8, 12, 18],
+        "Saturday": [8, 12, 18]
+      },
+      "people": ["Michael", "Ahmed", "Edison"],
+      "time": 4
+    },
+    {
+      "id": 2,
+      "name": "BCR Major",
+      "group": "Lightcycler",
+      "schedule": {
+        "Sunday": [8, 18],
+        "Monday": [],
+        "Tuesday": [],
+        "Wednesday": [8, 18],
+        "Thursday": [8, 18],
+        "Friday": [8, 18],
+        "Saturday": [8, 18]
+      },
+      "people": ["Michael", "Ahmed", "Zori"],
+      "time": 4
+    }
+]
