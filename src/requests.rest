@@ -1,10 +1,18 @@
-POST http://localhost:3003/api/tasks
+POST http://localhost:3001/api/tasks
 Content-Type: application/json
 
 {
-    "title": "cool guy cool stuff",
-    "author": "Cool Guy 3",
-    "url": "www.coolstuff3.com",
-    "likes": 10, 
-    "userId": "610d6eff919c47db586f52ff"
+    "name": "BCR Major",
+    "category": "Lightcycler",
+    "schedule": {
+        "sunday": [8, 18],
+        "monday": [],
+        "tuesday": [],
+        "wednesday": [8, 18],
+        "thursday": [8, 18],
+        "friday": [8, 18],
+        "saturday": [8, 18]
+    },
+    "people": ["61392ff2af57cf99d391e3fe"],
+    "time": 4
 }

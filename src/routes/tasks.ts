@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import express, { Request, Response } from 'express'
-// import { ObjectId } from 'mongoose';
+import { ObjectId } from 'mongoose';
 // import taskService from '../services/taskService'
 import Task from '../models/task'
+import Person from '../models/person'
 
 const router = express.Router();
 
@@ -15,19 +17,19 @@ router.get('/', [], async (_req: Request, res: Response ) => {
 
 });
 
-// router.post('/', [], async (req: Request, res: Response) => {
-//   const task = new Task(req.body)
+router.post('/', [], async (req: Request, res: Response) => {
+  const task = new Task(req.body)
 
-//   task.people.forEach( (person : ObjectId ) => {
-    
-//   })
+  const savedTask = await task.save()
 
-//   const savedTask = await task.save()
-
-//   user.blogs = user.blogs.concat(savedBlog._id)
-//   await user.save()
-
-//   return res.status(201).json(savedTask)
-// })
+  savedTask.people.forEach( async ( personId : ObjectId ) => {
+    const person = await Person.findById(personId)
+    if (person) {
+      person.tasks = person.tasks.concat(savedTask._id)
+      await person.save()
+    }
+  })
+  return res.status(201).json(savedTask)
+})
 
 export default router;
