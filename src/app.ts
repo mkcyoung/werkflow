@@ -5,6 +5,7 @@ require('express-async-errors')
 import cors from 'cors'
 import connect from './utils/connect'
 import taskRouter from './routes/tasks'
+import personRouter from './routes/people'
 import middleware from './utils/middleware'
 import logger from './utils/logger'
 const app = express()
@@ -19,6 +20,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/tasks', taskRouter)
+app.use('/api/people', personRouter)
 
 // if (process.env.NODE_ENV === 'test') {
 //   const testingRouter = require('./controllers/testing')

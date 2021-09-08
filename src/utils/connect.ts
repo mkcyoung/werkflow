@@ -1,25 +1,10 @@
 import mongoose from "mongoose"
-import { ConnectOptions } from "mongoose"
 import logger from './logger'
-
-type ConnectionOptionsExtend = {
-    useNewUrlParser: boolean,
-    useUnifiedTopology: boolean,
-    useCreateIndex: boolean,
-    useFindAndModify: boolean
-}
-
-const options : ConnectOptions & ConnectionOptionsExtend = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-};
 
 export default (db: string) => {
   const connect = () => {
     mongoose
-        .connect(db, options)
+        .connect(db)
         .then(() => {
             logger.info('connected to MongoDB')
         })

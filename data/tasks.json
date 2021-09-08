@@ -2,7 +2,7 @@
     {
       "id": 1,
       "name": "RNA",
-      "group": "extractions",
+      "category": "extractions",
       "schedule": {
         "Sunday": [8, 12, 18],
         "Monday": [8, 18],
@@ -18,7 +18,7 @@
     {
       "id": 2,
       "name": "BCR Major",
-      "group": "Lightcycler",
+      "category": "Lightcycler",
       "schedule": {
         "Sunday": [8, 18],
         "Monday": [],

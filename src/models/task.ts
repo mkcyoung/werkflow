@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import mongoose from 'mongoose'
 import { TaskInterface } from '../types'
 
@@ -6,31 +8,32 @@ const taskSchema = new mongoose.Schema<TaskInterface>({
         type: String,
         required: true
     },
-    group: {
+    category: {
         type: String,
         required: true
     },
     schedule: {
         sunday: {
-            type: [Number]
+            // date: Date, // maybe something like this could be useful.
+            type: [String]
         },
         monday: {
-            type: [Number]
+            type: [String]
         },
         tuesday: {
-            type: [Number]
+            type: [String]
         },
         wednesday: {
-            type: [Number]
+            type: [String]
         },
         thursday: {
-            type: [Number]
+            type: [String]
         },
         friday: {
-            type: [Number]
+            type: [String]
         },
         saturday: {
-            type: [Number]
+            type: [String]
         }
     },
     people: [

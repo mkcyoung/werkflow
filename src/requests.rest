@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/tasks
+Content-Type: application/json
+
+{
+    "title": "cool guy cool stuff",
+    "author": "Cool Guy 3",
+    "url": "www.coolstuff3.com",
+    "likes": 10, 
+    "userId": "610d6eff919c47db586f52ff"
+}
