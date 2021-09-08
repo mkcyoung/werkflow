@@ -16,3 +16,20 @@ Content-Type: application/json
     "people": ["61392ff2af57cf99d391e3fe"],
     "time": 4
 }
+
+###
+POST http://localhost:3001/api/people
+Content-Type: application/json
+
+{
+    "firstName": "Ahmed",
+    "lastName": "Mohammed",
+    "schedule": {
+        "sunday": [8, "6:30"],
+        "monday": [8, "6:30"],
+        "tuesday": [8, "6:30"],
+        "wednesday": [8, "6:30"]
+    },
+    "tasks": ["613936b2a26964e238951ede", "61392daeaf57cf99d391e3fc"],
+    "daysOff": ["01-19-2024"]
+}
