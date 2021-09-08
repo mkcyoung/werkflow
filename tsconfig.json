@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "outDir": "./build/",
+    "outDir": "./build/", // may need to adjust this to have it work for heroku (make root the outdir)
     "module": "commonjs",
     "strict": true,
     "noUnusedLocals": true,
