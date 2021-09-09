@@ -5,36 +5,59 @@ import uniqueValidator from 'mongoose-unique-validator'
 import { PersonInterface } from '../types'
 
 const personSchema = new mongoose.Schema<PersonInterface>({
-    firstName: {
-      type: String,
-      required: true
-    },
-    lastName: {
-      type: String,
-      required: true
+    name: {
+        first: { type: String, required: true },
+        last: { type: String, required: true }
     },
     schedule: {
         sunday: {
-            // date: Date, // maybe something like this could be useful.
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         },
         monday: {
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         },
         tuesday: {
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         },
         wednesday: {
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         },
         thursday: {
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         },
         friday: {
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         },
         saturday: {
-            type: [String]
+            timeIn: {
+                start: { type: String, default: '' },
+                end: { type: String, default: '' },
+            },
+            taskHours: { type: Number, default: 0}
         }
     },
     tasks: [
@@ -43,7 +66,16 @@ const personSchema = new mongoose.Schema<PersonInterface>({
         ref: 'Task'
         }
     ],
-    daysOff: [String],
+    daysOff: [
+        {
+            date: String,
+            allDay: Boolean,
+            timeIn: {
+                start: { type: String },
+                end: { type: String },
+            }
+        }
+    ],
 })
 
 personSchema.plugin(uniqueValidator)

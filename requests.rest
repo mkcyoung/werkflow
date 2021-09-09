@@ -22,8 +22,8 @@ POST http://localhost:3001/api/people
 Content-Type: application/json
 
 {
-    "firstName": "Ahmed",
-    "lastName": "Mohammed",
+    "firstName": "Santa",
+    "lastName": "Clause",
     "schedule": {
         "sunday": [8, "6:30"],
         "monday": [8, "6:30"],
@@ -32,4 +32,25 @@ Content-Type: application/json
     },
     "tasks": ["613936b2a26964e238951ede", "61392daeaf57cf99d391e3fc"],
     "daysOff": ["01-19-2024"]
+}
+
+###
+POST http://localhost:3001/api/people
+Content-Type: application/json
+
+{
+    "name": {
+        "first": "tom",
+        "last": "cruise"
+    },
+    "schedule": {
+        "sunday": {
+            "timeIn": {
+                "start":"8:00",
+                "end":"6:30"
+            }
+        }
+    },
+    "tasks": ["613936b2a26964e238951ede", "61392daeaf57cf99d391e3fc"],
+    "daysOff": []
 }

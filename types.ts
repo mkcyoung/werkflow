@@ -1,6 +1,5 @@
 import { ObjectId } from 'mongoose';
 
-
 export interface Schedule {
     sunday: string[];
     monday: string[];
@@ -11,6 +10,7 @@ export interface Schedule {
     saturday: string[];
 }
 
+
 export interface TaskInterface {
     name: string;
     category: string;
@@ -19,10 +19,41 @@ export interface TaskInterface {
     time: number
 }
 
+export interface PersonHours {
+    start: string;
+    end: string;
+}
+
+export interface Day {
+    // date: Date;
+    timeIn: PersonHours;
+    taskHours: number;
+}
+
+export interface PersonSchedule {
+    sunday: Day;
+    monday: Day;
+    tuesday: Day;
+    wednesday: Day;
+    thursday: Day;
+    friday: Day;
+    saturday: Day;
+}
+
+export interface Name {
+    first: string;
+    last: string
+}
+
+export interface DayOff {
+    date: string,
+    allDay: boolean,
+    timeIn?: PersonHours
+}
+
 export interface PersonInterface {
-    firstName: string;
-    lastName: string;
-    schedule: Schedule;
+    name: Name;
+    schedule: PersonSchedule;
     tasks: ObjectId[];
-    daysOff: string[];
+    daysOff?: DayOff[];
 }
