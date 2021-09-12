@@ -9,61 +9,30 @@ const personSchema = new mongoose.Schema<PersonInterface>({
         first: { type: String, required: true },
         last: { type: String, required: true }
     },
-    schedule: {
-        sunday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
+    schedule: [
+        {
+            day: {
+                type: String,
+                required: true
             },
-            taskHours: { type: Number, default: 0}
+            time: {
+                start: {
+                    type: String,
+                    required: true
+                },
+                end: {
+                    type: String,
+                    required: true
+                }
+            },
+            taskHours: Number,
+            _id : false 
         },
-        monday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
-            },
-            taskHours: { type: Number, default: 0}
-        },
-        tuesday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
-            },
-            taskHours: { type: Number, default: 0}
-        },
-        wednesday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
-            },
-            taskHours: { type: Number, default: 0}
-        },
-        thursday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
-            },
-            taskHours: { type: Number, default: 0}
-        },
-        friday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
-            },
-            taskHours: { type: Number, default: 0}
-        },
-        saturday: {
-            timeIn: {
-                start: { type: String, default: '' },
-                end: { type: String, default: '' },
-            },
-            taskHours: { type: Number, default: 0}
-        }
-    },
+    ],
     tasks: [
         {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Task'
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Task'
         }
     ],
     daysOff: [

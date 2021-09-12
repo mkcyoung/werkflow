@@ -40,17 +40,38 @@ Content-Type: application/json
 
 {
     "name": {
-        "first": "tom",
-        "last": "cruise"
+        "first": "Tom",
+        "last": "Cruise"
     },
-    "schedule": {
-        "sunday": {
-            "timeIn": {
-                "start":"8:00",
-                "end":"6:30"
+    "schedule": [
+        {
+            "day": "wednesday",
+            "time": {
+                "start": "8:00",
+                "end": "18:30"
+            }
+        },
+        {
+            "day": "thursday",
+            "time": {
+                "start": "8:00",
+                "end": "18:30"
+            }
+        },
+        {
+            "day": "friday",
+            "time": {
+                "start": "8:00",
+                "end": "18:30"
+            }
+        },
+                {
+            "day": "saturday",
+            "time": {
+                "start": "8:00",
+                "end": "18:30"
             }
         }
-    },
-    "tasks": ["613936b2a26964e238951ede", "61392daeaf57cf99d391e3fc"],
-    "daysOff": []
+    ],
+    "tasks": ["613936b2a26964e238951ede", "61392daeaf57cf99d391e3fc"]
 }

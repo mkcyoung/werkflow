@@ -24,21 +24,24 @@ export interface PersonHours {
     end: string;
 }
 
+export type WeekDay = 'sunday' | 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday'
+
 export interface Day {
     // date: Date;
-    timeIn: PersonHours;
+    day: WeekDay;
+    time: PersonHours;
     taskHours: number;
 }
 
-export interface PersonSchedule {
-    sunday: Day;
-    monday: Day;
-    tuesday: Day;
-    wednesday: Day;
-    thursday: Day;
-    friday: Day;
-    saturday: Day;
-}
+// export interface PersonSchedule {
+//     sunday: Day;
+//     monday: Day;
+//     tuesday: Day;
+//     wednesday: Day;
+//     thursday: Day;
+//     friday: Day;
+//     saturday: Day;
+// }
 
 export interface Name {
     first: string;
@@ -53,7 +56,9 @@ export interface DayOff {
 
 export interface PersonInterface {
     name: Name;
-    schedule: PersonSchedule;
+    schedule: Day[];
     tasks: ObjectId[];
     daysOff?: DayOff[];
 }
+
+
