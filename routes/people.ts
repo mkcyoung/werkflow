@@ -20,7 +20,7 @@ router.get('/', [], async (_req: Request, res: Response ) => {
 
 router.post('/', [], async (req: Request, res: Response) => {
   try{
-    // Let's include some type validation here before I save
+    // Let's include some type validation here before I save?
     const newPerson = toNewPerson(req.body)
     const person = new Person(newPerson)
     const savedPerson = await person.save()
@@ -33,12 +33,16 @@ router.post('/', [], async (req: Request, res: Response) => {
       }
     })
 
-    return res.status(201).json(savedPerson)
+    const updatedPerson = await Person
+      .findById(savedPerson._id).populate('tasks', {id: 1, name: 1})
+
+    return res.status(201).json(updatedPerson)
 
   } catch ({message}: unknown ) {
 
     return res.status(400).send(message);
   }
+    
 })
 
 export default router;

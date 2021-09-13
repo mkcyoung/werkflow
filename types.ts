@@ -61,4 +61,20 @@ export interface PersonInterface {
     daysOff?: DayOff[];
 }
 
+export interface Task {
+    id: string;
+    name: string;
+    category: string;
+    schedule: Schedule;
+    people: ObjectId[];
+    time: number
+}
+
+export interface PersonInterfacePop {
+    name: Name;
+    schedule: Day[];
+    tasks: Task[];
+    daysOff?: DayOff[];
+}
+
 

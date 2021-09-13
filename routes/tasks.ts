@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', [], async (_req: Request, res: Response ) => {
   const tasks = await Task
     .find({})
-    .populate('people', ({id: 1, firstName: 1, lastName: 1, schedule: 1, daysOff: 1 }))
+    .populate('people', ({id: 1, name: 1, schedule: 1, daysOff: 1, tasks: 1 }))
 
   return res.status(200).json(tasks)
 
