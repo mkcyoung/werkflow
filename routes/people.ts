@@ -32,7 +32,9 @@ router.post('/', [], async (req: Request, res: Response) => {
         await task.save()
       }
     })
-
+    
+    // TODO: This feels very inefficient, think I should just adjust my types! also maybe I just won't 
+    // populate at all... have to make some tradeoffs.
     const updatedPerson = await Person
       .findById(savedPerson._id).populate('tasks', {id: 1, name: 1})
 

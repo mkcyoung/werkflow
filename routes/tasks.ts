@@ -29,7 +29,10 @@ router.post('/', [], async (req: Request, res: Response) => {
       await person.save()
     }
   })
-  return res.status(201).json(savedTask)
+
+  const updatedTask = await Task
+    .findById(savedTask._id).populate('people', ({id: 1, name: 1, schedule: 1, daysOff: 1, tasks: 1 }))
+  return res.status(201).json(updatedTask)
 })
 
 export default router;
