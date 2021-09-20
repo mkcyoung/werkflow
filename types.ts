@@ -1,22 +1,32 @@
 import { ObjectId } from 'mongoose';
 
-export interface Schedule {
-    sunday: string[];
-    monday: string[];
-    tuesday: string[];
-    wednesday: string[];
-    thursday: string[];
-    friday: string[];
-    saturday: string[];
+// export interface Schedule {
+//     sunday: string[];
+//     monday: string[];
+//     tuesday: string[];
+//     wednesday: string[];
+//     thursday: string[];
+//     friday: string[];
+//     saturday: string[];
+// }
+
+export interface Subtask {
+    start: string,
+    end: string
+}
+
+export interface TaskDay {
+    fullDay: boolean,
+    subtasks?: Subtask[] | null
 }
 
 
 export interface TaskInterface {
     name: string;
     category: string;
-    schedule: Schedule;
+    schedule: TaskDay[];
     people: ObjectId[];
-    time: number
+    taskTime: number
 }
 
 export interface PersonHours {
@@ -65,9 +75,9 @@ export interface Task {
     id: string;
     name: string;
     category: string;
-    schedule: Schedule;
+    schedule: TaskDay[];
     people: ObjectId[];
-    time: number
+    taskTime: number
 }
 
 export interface PersonInterfacePop {

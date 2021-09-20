@@ -2,19 +2,16 @@ POST http://localhost:3001/api/tasks
 Content-Type: application/json
 
 {
-    "name": "BCR Major",
+    "name": "BCR Minor",
     "category": "Lightcycler",
-    "schedule": {
-        "sunday": [8, 18],
-        "monday": [],
-        "tuesday": [],
-        "wednesday": [8, 18],
-        "thursday": [8, 18],
-        "friday": [8, 18],
-        "saturday": [8, 18]
-    },
+    "schedule": [
+        {
+            "day": "Sunday",
+            "fullDay": true
+        }
+    ],
     "people": ["61392ff2af57cf99d391e3fe"],
-    "time": 4
+    "taskTime": 4
 }
 
 ###

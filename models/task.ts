@@ -12,37 +12,25 @@ const taskSchema = new mongoose.Schema<TaskInterface>({
         type: String,
         required: true
     },
-    schedule: {
-        sunday: {
-            // date: Date, // maybe something like this could be useful.
-            type: [String]
-        },
-        monday: {
-            type: [String]
-        },
-        tuesday: {
-            type: [String]
-        },
-        wednesday: {
-            type: [String]
-        },
-        thursday: {
-            type: [String]
-        },
-        friday: {
-            type: [String]
-        },
-        saturday: {
-            type: [String]
+    schedule: [
+        {
+            day: { type: String },
+            fullDay: { type: Boolean },
+            subtasks: [{
+                start: String,
+                end: String,
+                _id : false 
+            }],
+            _id : false 
         }
-    },
+    ],
     people: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Person'
         }
     ],
-    time: {
+    taskTime: {
         type: Number,
         required: true
     }
