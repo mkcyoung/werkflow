@@ -16,7 +16,7 @@ const taskSchema = new mongoose.Schema<TaskInterface>({
         {
             day: { type: String },
             fullDay: { type: Boolean },
-            subtasks: [{
+            subTasks: [{
                 start: String,
                 end: String,
                 _id : false 

@@ -10,14 +10,14 @@ import { ObjectId } from 'mongoose';
 //     saturday: string[];
 // }
 
-export interface Subtask {
+export interface SubTask {
     start: string,
     end: string
 }
 
 export interface TaskDay {
     fullDay: boolean,
-    subtasks?: Subtask[] | null
+    subTasks?: SubTask[] | null
 }
 
 
