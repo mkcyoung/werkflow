@@ -72,3 +72,18 @@ Content-Type: application/json
     ],
     "tasks": ["613936b2a26964e238951ede", "61392daeaf57cf99d391e3fc"]
 }
+
+###
+POST https://contact.plaid.com/jobs
+Content-Type: application/json
+
+{
+    "name": "Michael Young",
+    "email": "m.c.young0@gmail.com",
+    "resume": "https://mkcyoung.github.io/current_resume.pdf",
+    "phone": "801-362-2966",
+    "job_id": "b712a660-4589-4369-8472-70937b3433ae",
+    "github": "https://github.com/mkcyoung",
+    "website": "https://mkcyoung.github.io/",
+    "superpower": "submitting applications through a POST request"
+}
